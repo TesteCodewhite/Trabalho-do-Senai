@@ -1,0 +1,141 @@
+body,html {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
+header {
+    background-color: #dbd7d7;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: rgba(0,0,0,0.75) 0px 15px 20px -6px;
+}
+.logo img {
+    height: 50px;
+    width: 180px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav li {
+    margin-left: 20px;
+}
+nav li:hover {
+    text-decoration: underline;
+    color: #000;
+}
+nav a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+main {
+    padding: 20px;
+}
+.hero {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.regions {
+    text-align: center;
+}
+.region-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.region-card {
+    width: 200px;
+    margin: 20px;
+    text-decoration: none;
+    color: #000;
+    border: solid 0.3px;
+    border-color: #000;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.65) 1.95px 1.95px 2.6px;
+    transition: transform 0.3s ease-in-out;
+}
+.region-card:hover {
+    background: #e5e2e2;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+footer {
+    background: #dbd7d7;
+    text-align: center;
+    padding: 20px;
+}
+
+
+@media (max-width: 768px){
+    nav {
+        position: relative;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #cfc8c8;
+        flex-direction: column;
+        gap: 26px;
+        align-items: start;
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+
+    }
+    .menu.active{
+        left: 0;
+    }
+    .menu li {
+        width: 60%;
+        text-align: left;
+
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1002;
+        color: #050505;
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.65);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 999;
+    }
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    
+}

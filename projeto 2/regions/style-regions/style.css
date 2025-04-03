@@ -1,0 +1,208 @@
+body, html {
+    font-family: Arial, sans-serif; /* Mantive Arial do segundo CSS por ser mais específico */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #5881A6; /* Mantive o fundo azul do segundo CSS */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px; /* Mantive o padding mais amplo do primeiro CSS */
+    text-align: center;
+}
+
+header {
+    background-color: #BACBD9; /* Cor do segundo CSS, mais específica */
+    color: #261201; /* Cor do texto do segundo CSS */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); /* Sombra mais suave do segundo CSS */
+    position: relative;
+}
+
+.logo img {
+    height: 60px; /* Tamanho maior do segundo CSS */
+    width: 200px; /* Tamanho maior do segundo CSS */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px; /* Adicionado do segundo CSS */
+    align-items: center;
+}
+
+nav ul.menu li {
+    padding: 10px 20px; /* Estilo do segundo CSS */
+    cursor: pointer;
+}
+
+nav a {
+    color: #261201; /* Cor do segundo CSS */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul.menu li:hover a {
+    color: #FFFFFF; /* Hover do segundo CSS */
+    text-decoration: none;
+}
+
+nav li:hover {
+    text-decoration: underline; /* Mantive o sublinhado do primeiro CSS como fallback */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #261201; /* Cor do segundo CSS */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Cor e opacidade do segundo CSS */
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.regions {
+    text-align: center;
+}
+
+.regions-cards { /* Corrigido para .regions-cards conforme o HTML */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.region-card {
+    width: 200px;
+    margin: 20px;
+    text-decoration: none;
+    color: #000;
+    border: solid 0.3px;
+    border-color: #000;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.65) 1.95px 1.95px 2.6px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.region-card:hover {
+    background: #e5e2e2;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+footer {
+    background: #dbd7d7;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+     .menu {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #cfc8c8;
+        flex-direction: column;
+        gap: 26px;
+        align-items: start;
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+        z-index: 4;
+
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 30px; /* Tamanho maior do segundo CSS */
+        cursor: pointer;
+        position: fixed; /* Posicionamento do segundo CSS */
+        top: 15px;
+        right: 15px;
+        z-index: 1002;
+        color: #050505; /* Cor mais escura do segundo CSS */
+    }
+
+    nav ul.menu {
+        display: none;
+        flex-direction: column;
+        position: fixed; /* Alterado para fixed conforme o segundo CSS */
+        top: 0;
+        margin: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #cfc8c8; /* Cor do segundo CSS */
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out; /* Transição do segundo CSS */
+    }
+
+    nav ul.menu.active {
+        display: flex;
+        left: 0;
+    }
+
+    nav ul.menu li {
+        padding: 15px 20px; /* Padding do segundo CSS */
+        text-align: left; /* Alinhamento do segundo CSS */
+        width: 60%; /* Largura do segundo CSS */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 50px; /* Tamanho reduzido do segundo CSS */
+        width: 150px;
+    }
+
+    header {
+        padding: 10px 15px; /* Padding reduzido do segundo CSS */
+    }
+
+    .overlay {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
