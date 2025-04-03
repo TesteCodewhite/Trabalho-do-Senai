@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrações no Centro-Oeste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #5881A6;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1C2526;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #F5C518;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .hero {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .content-section {
+            padding: 40px 20px;
+            background-color: white;
+        }
+        .content-section h2 {
+            color: #1C2526;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card i {
+            font-size: 40px;
+            color: #F5C518;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 24px;
+            color: #1C2526;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        footer {
+            background-color: #1C2526;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #F5C518;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: #1C2526;
+                padding: 20px;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                margin: 10px 0;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .content-section {
+                padding: 20px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            .card {
+                padding: 15px;
+            }
+            .card h3 {
+                font-size: 20px;
+            }
+            .card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/imagens/SENAI_logo_2024 (1).png" alt="Logo SENAI">
+        </div>
+        <nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/regions/nordeste.html">Nordeste</a></li>
+                <li><a href="/regions/norte.html">Norte</a></li>
+                <li><a href="/regions/sul.html">Sul</a></li>
+                <li><a href="/regions/suldeste.html">Sudeste</a></li>
+                <li><a href="/regions/centro-oeste.html">Centro-Oeste</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Migrações na Região Centro-Oeste do Brasil</h1>
+            <p>Explore a história e as tendências migratórias que moldaram o coração do Brasil.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>História e Impactos</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-history"></i>
+                    <h3>Colonização</h3>
+                    <p>A colonização do Centro-Oeste começou no século XVIII com bandeirantes em busca de ouro e jesuítas que fundaram missões.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-city"></i>
+                    <h3>Construção de Brasília</h3>
+                    <p>Na década de 1960, a construção de Brasília atraiu milhares de trabalhadores, marcando um dos maiores movimentos migratórios do Brasil.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Agronegócio</h3>
+                    <p>Hoje, o Centro-Oeste é um polo de atração devido ao crescimento do agronegócio, atraindo migrantes de várias regiões.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Estatísticas e Tendências</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Crescimento Populacional</h3>
+                    <p>Entre 2010 e 2020, a população do Centro-Oeste cresceu a uma taxa média de 1,5% ao ano, segundo o IBGE.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Migração Internacional</h3>
+                    <p>A região tem recebido imigrantes de países vizinhos, como Bolívia e Paraguai, em busca de melhores condições de vida.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Gráfico+de+Migração" alt="Gráfico de Migração">
+                    <h3>Taxa de Migração</h3>
+                    <p>Em 2020, a taxa de migração líquida foi de 2,3 por mil habitantes, refletindo um saldo positivo de entradas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><b>Desenvolvido por:</b> Francisco Eduardo</p>
+        <p><b>Projeto Migrações:</b> SESI/SENAI</p>
+        <h3>Fontes</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="https://www.ibge.gov.br" target="_blank">IBGE - Instituto Brasileiro de Geografia e Estatística</a></li>
+            <li><a href="https://www.embrapa.br" target="_blank">Embrapa - Empresa Brasileira de Pesquisa Agropecuária</a></li>
+            <li><a href="https://www.gov.br" target="_blank">Portal do Governo Brasileiro</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
