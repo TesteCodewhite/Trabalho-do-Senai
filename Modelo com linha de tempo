@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrações na Região Sul</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+        .hero-content {
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 24px;
+            color: #4CAF50;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 100px 20px;
+            background-color: #fff;
+            color: #000;
+        }
+        .content-section:nth-child(even) {
+            background-color: #f5f5f7;
+        }
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+            color: #1d1d1f;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: transparent;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card i {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover i {
+            transform: scale(1.1);
+        }
+        .card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #6e6e73;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.5s ease;
+        }
+        .card:hover img {
+            transform: scale(1.05);
+        }
+        .culture-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .culture-section img {
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+        .culture-section img:hover {
+            transform: translateY(-5px);
+        }
+        .culture-section .text {
+            width: 50%;
+        }
+        .culture-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #8B1E3F;
+        }
+        .culture-section p {
+            font-size: 18px;
+            color: #6e6e73;
+        }
+        .highlight-section {
+            background-color: #000;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: #4CAF50;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        .highlight-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: #8B1E3F;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        .highlight-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .highlight-section p {
+            font-size: 22px;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-section {
+            padding: 100px 20px;
+            background-color: #f5f5f7;
+            color: #000;
+        }
+        .timeline-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #4CAF50;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        .timeline-item .content {
+            width: 45%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item .content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #8B1E3F;
+        }
+        .timeline-item .content p {
+            font-size: 16px;
+            color: #6e6e73;
+        }
+        .timeline-item .year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #000;
+            padding: 50px 20px;
+            text-align: center;
+            color: #6e6e73;
+        }
+        footer p {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        footer h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #8B1E3F;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 1024px) {
+            .culture-section {
+                flex-direction: column;
+            }
+            .culture-section img, .culture-section .text {
+                width: 100%;
+            }
+            .culture-section img {
+                margin-bottom: 20px;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .timeline-item:nth-child(odd) {
+                flex-direction: column;
+            }
+            .timeline-item .content {
+                width: 100%;
+                margin-left: 60px;
+            }
+            .timeline-item .year {
+                left: 20px;
+                transform: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #000;
+                padding: 20px;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                margin: 10px 0;
+            }
+            .hero h1 {
+                font-size: 48px;
+            }
+            .hero p {
+                font-size: 20px;
+            }
+            .content-section {
+                padding: 60px 10px;
+            }
+            .content-section h2 {
+                font-size: 36px;
+            }
+            .highlight-section h3 {
+                font-size: 32px;
+            }
+            .highlight-section p {
+                font-size: 18px;
+            }
+            .timeline-section h2 {
+                font-size: 36px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .content-section h2 {
+                font-size: 28px;
+            }
+            .card h3 {
+                font-size: 20px;
+            }
+            .card p {
+                font-size: 14px;
+            }
+            .culture-section h3 {
+                font-size: 24px;
+            }
+            .culture-section p {
+                font-size: 16px;
+            }
+            .highlight-section h3 {
+                font-size: 24px;
+            }
+            .highlight-section p {
+                font-size: 16px;
+            }
+            .timeline-section h2 {
+                font-size: 28px;
+            }
+            .timeline-item .content h3 {
+                font-size: 20px;
+            }
+            .timeline-item .content p {
+                font-size: 14px;
+            }
+            .timeline-item .year {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/imagens/SENAI_logo_2024 (1).png" alt="Logo SENAI">
+        </div>
+        <nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/regions/nordeste.html">Nordeste</a></li>
+                <li><a href="/regions/norte.html">Norte</a></li>
+                <li><a href="/regions/sul.html">Sul</a></li>
+                <li><a href="/regions/suldeste.html">Sudeste</a></li>
+                <li><a href="/regions/centro-oeste.html">Centro-Oeste</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <video autoplay muted loop playsinline>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            <div class="hero-content">
+                <h1>Migrações na Região Sul</h1>
+                <p>Uma jornada pela história, cultura e transformações</p>
+            </div>
+        </section>
+
+        <section class="content-section fade-in">
+            <h2>História das Migrações</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-ship"></i>
+                    <h3>Chegada dos Imigrantes</h3>
+                    <p>A partir do século XIX, imigrantes europeus, principalmente italianos, alemães e poloneses, chegaram ao Sul, trazendo suas tradições e moldando a cultura local.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-home"></i>
+                    <h3>Colonização Rural</h3>
+                    <p>Os imigrantes se estabeleceram em colônias rurais, como Caxias do Sul e Blumenau, desenvolvendo a agricultura e a viticultura na região.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industrialização</h3>
+                    <p>No século XX, a industrialização atraiu migrantes de outras regiões do Brasil, especialmente para cidades como Curitiba e Porto Alegre.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section fade-in">
+            <h2>Linha do Tempo</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">1824</div>
+                    <div class="content">
+                        <h3>Primeiros Imigrantes Alemães</h3>
+                        <p>Chegada dos primeiros imigrantes alemães a São Leopoldo, marcando o início da colonização europeia no Sul.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">1875</div>
+                    <div class="content">
+                        <h3>Imigração Italiana</h3>
+                        <p>Imigrantes italianos começam a chegar em grande número, fundando colônias como Caxias do Sul.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">1950</div>
+                    <div class="content">
+                        <h3>Industrialização</h3>
+                        <p>Cidades como Porto Alegre e Curitiba crescem com a industrialização, atraindo migrantes internos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section fade-in">
+            <h2>Cultura e Tradições</h2>
+            <div class="culture-section">
+                <img src="https://via.placeholder.com/600x400?text=Oktoberfest+Blumenau" alt="Oktoberfest Blumenau">
+                <div class="text">
+                    <h3>Influência Europeia</h3>
+                    <p>A região Sul é conhecida por sua forte influência europeia, visível em festas como a Oktoberfest de Blumenau, a gastronomia (churrasco e chimarrão) e a arquitetura de cidades como Gramado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlight-section fade-in">
+            <h3>Terra das Vinícolas e Serras</h3>
+            <p>Explore as paisagens deslumbrantes do Sul, desde as serras de Santa Catarina até as vinícolas do Rio Grande do Sul.</p>
+        </section>
+
+        <section class="content-section fade-in">
+            <h2>Estatísticas e Tendências</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Crescimento Populacional</h3>
+                    <p>Entre 2010 e 2020, a população do Sul cresceu a uma taxa média de 1,2% ao ano, segundo o IBGE.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Migração Atual</h3>
+                    <p>Hoje, a região atrai migrantes em busca de qualidade de vida, com cidades como Florianópolis sendo destinos populares.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Gráfico+de+Migração" alt="Gráfico de Migração">
+                    <h3>Taxa de Migração</h3>
+                    <p>Em 2020, a taxa de migração líquida foi de 1,8 por mil habitantes, refletindo um saldo positivo de entradas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><b>Desenvolvido por:</b> Francisco Eduardo</p>
+        <p><b>Projeto Migrações:</b> SESI/SENAI</p>
+        <h3>Fontes</h3>
+        <ul>
+            <li><a href="https://www.ibge.gov.br" target="_blank">IBGE - Instituto Brasileiro de Geografia e Estatística</a></li>
+            <li><a href="https://www.embrapa.br" target="_blank">Embrapa - Empresa Brasileira de Pesquisa Agropecuária</a></li>
+            <li><a href="https://www.gov.br" target="_blank">Portal do Governo Brasileiro</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu responsivo
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('active');
+            });
+
+            // Animações de rolagem
+            const fadeIns = document.querySelectorAll('.fade-in');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeIns.forEach(element => observer.observe(element));
+            timelineItems.forEach(item => observer.observe(item));
+        });
+    </script>
+</body>
+</html>
