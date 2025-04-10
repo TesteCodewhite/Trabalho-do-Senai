@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a história, cultura e transformações das migrações na Região Sul do Brasil">
+    <meta property="og:title" content="Migrações na Região Sul">
+    <meta property="og:description" content="Uma jornada pela história, cultura e transformações da Região Sul do Brasil">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <meta property="og:url" content="https://migracoesnosul.com">
+    <title>Migrações na Região Sul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&family=Montserrat:wght@700&family=Georgia&family=Impact&family=Bebas+Neue&family=Stencil&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preload" href="/path/to/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="Brasao-sul" href="/imagens/svg/Brasão_do_Rio_Grande_do_Sul.svg">
+    <link rel="stylesheet" href="/regions/sul/style.css">
+</head>
+<body>
+    <!-- Tela de Loading -->
+    <div class="loading-screen">
+        <span class="loading-text">SUL</span>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="/imagens/SENAI_logo_2024 (1).png" alt="Logo SENAI">
+        </div>
+        <nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/regions/nordeste.html">Nordeste</a></li>
+                <li><a href="/regions/norte.html">Norte</a></li>
+                <li><a href="/regions/sul/Sul.html">Sul</a></li>
+                <li><a href="/regions/suldeste.html">Sudeste</a></li>
+                <li><a href="/regions/centro-oeste.html">Centro-Oeste</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <video autoplay muted loop playsinline>
+                <source src="/imagens/videos/Rio Grande do Sul_ paisagens incríveis e muita cultura.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            <div class="hero-content">
+                <h1>Migrações na Região Sul</h1>
+                <p>Uma jornada pela história, cultura e transformações</p>
+            </div>
+        </section>
+
+        <section class="content-section history-section fade-in">
+            <h2>História das Migrações</h2>
+            <p>Conheça os principais momentos que moldaram a demografia e a cultura da Região Sul do Brasil, desde a chegada dos primeiros imigrantes até os desafios contemporâneos.</p>
+            <div class="history-content">
+                <div class="history-text">
+                    <h3>Chegada dos Imigrantes Europeus</h3>
+                    <p>A partir de 1824, a Região Sul começou a receber imigrantes alemães, que se estabeleceram em áreas como São Leopoldo, no Rio Grande do Sul. Mais tarde, a partir de 1875, os italianos chegaram em grande número, fundando colônias como Caxias do Sul e Garibaldi. Esses grupos trouxeram consigo tradições, técnicas agrícolas e uma forte ética de trabalho, que transformaram a região em um polo de produção agrícola e cultural. Para mais detalhes, consulte o <a href="https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/julho/200-anos-da-imigracao-alema-no-brasil" target="_blank">Portal do Governo Brasileiro</a>.</p>
+                </div>
+                <div class="history-image">
+                    <img src="/imagens/colonizacao-italiana.jpg" alt="Chegada dos Imigrantes">
+                </div>
+            </div>
+            <div class="history-content">
+                <div class="history-image">
+                    <img src="/imagens/industrialização-1950.jpg" alt="Industrialização">
+                </div>
+                <div class="history-text">
+                    <h3>Industrialização e Urbanização</h3>
+                    <p>A partir da década de 1950, a Região Sul passou por um processo de industrialização, com cidades como Porto Alegre e Curitiba se tornando centros econômicos. Esse período atraiu migrantes de outras regiões do Brasil, especialmente do Nordeste, em busca de melhores oportunidades de trabalho. A urbanização trouxe mudanças significativas na paisagem e na dinâmica social da região. Dados históricos podem ser encontrados no <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao.html" target="_blank">IBGE</a>.</p>
+                </div>
+            </div>
+            <div class="history-content">
+                <div class="history-text">
+                    <h3>Desafios Contemporâneos</h3>
+                    <p>Em 2024, as enchentes históricas no Rio Grande do Sul deslocaram mais de 420.000 pessoas, evidenciando os desafios climáticos que afetam a região. Esses eventos têm levado a novos padrões de migração, com populações buscando áreas mais seguras e sustentáveis, enquanto tentam preservar suas tradições culturais. Essa informação foi publicada pelo <a href="https://www.theguardian.com/world/2024/nov/14/brazil-floods-displace-420000-people-rio-grande-do-sul" target="_blank">The Guardian</a> em 14/11/2024.</p>
+                </div>
+                <div class="history-image">
+                    <img src="/imagens/migração-enchentes.jpg" alt="Enchentes 2024">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Atualizada: Migrações Internas -->
+        <section class="content-section internal-migration-section fade-in">
+            <h2>Migrações Internas: O Papel do Sul</h2>
+            <p>Explore como a Região Sul se comportou durante os períodos de migração interna no Brasil, entre 1960 e a década de 1990, com base em dados históricos e mapas ilustrativos.</p>
+            <div class="migration-grid">
+                <div class="migration-card">
+                    <img src="/imagens/250px-Anos_60-80.png" alt="Mapa da migração 1960-1970">
+                    <div class="migration-content">
+                        <h3>1960–1970</h3>
+                        <p>Durante este período, o Sul consolidou-se como uma região atrativa, recebendo fluxos migratórios principalmente do Sudeste e do Nordeste. Cidades como Curitiba e Porto Alegre cresceram como polos industriais e urbanos, atraindo trabalhadores em busca de melhores oportunidades.</p>
+                    </div>
+                </div>
+                <div class="migration-card">
+                    <img src="/imagens/250px-Anos_80-90.png" alt="Mapa da migração 1970-1990">
+                    <div class="migration-content">
+                        <h3>1970–1990</h3>
+                        <p>O Sul continuou a receber migrantes, mas também passou a "exportar" população, especialmente para o Centro-Oeste, onde a ocupação agrícola se expandiu, e para São Paulo, um polo industrial. A mecanização agrícola no Sul incentivou a busca por terras mais baratas em outras regiões.</p>
+                    </div>
+                </div>
+                <div class="migration-card">
+                    <img src="/imagens/250px-90-.png" alt="Mapa da migração década de 1990">
+                    <div class="migration-content">
+                        <h3>Década de 1990</h3>
+                        <p>O fluxo migratório no Sul se equilibrou, com entradas e saídas de população. Muitos jovens migraram para o Sudeste e Centro-Oeste, enquanto cidades médias do interior, como Caxias do Sul e Joinville, começaram a receber migrantes, descentralizando os polos de atração.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section library-section fade-in">
+            <h2>Biblioteca da História</h2>
+            <p>Explore os marcos históricos que definiram as migrações na Região Sul, desde os primeiros colonos até os dias atuais.</p>
+            <div class="library-grid">
+                <div class="library-item">
+                    <img src="/imagens/imigrantes-alemão.jpg" alt="Primeiros Imigrantes Alemães">
+                    <div class="library-item-content">
+                        <h3>1824: Primeiros Imigrantes Alemães</h3>
+                        <p>Em 1824, os primeiros imigrantes alemães chegaram a São Leopoldo, no Rio Grande do Sul, marcando o início da colonização europeia na região. Eles introduziram novas técnicas agrícolas e estabeleceram comunidades que ainda hoje preservam sua cultura. Saiba mais no <a href="https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/julho/200-anos-da-imigracao-alema-no-brasil" target="_blank">Portal do Governo Brasileiro</a>.</p>
+                    </div>
+                </div>
+                <div class="library-item">
+                    <img src="/imagens/navios-de-imigrantes-italianos-1024x695.webp" alt="Imigração Italiana">
+                    <div class="library-item-content">
+                        <h3>1875: Imigração Italiana</h3>
+                        <p>A partir de 1875, milhares de italianos se estabeleceram na Região Sul, fundando colônias como Caxias do Sul e Garibaldi. Sua influência é visível na arquitetura, na gastronomia e nas festas tradicionais, como a Festa da Uva. Mais informações estão disponíveis no <a href="https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/julho/150-anos-da-imigracao-italiana-no-brasil" target="_blank">Portal do Governo Brasileiro</a>.</p>
+                    </div>
+                </div>
+                <div class="library-item">
+                    <img src="/imagens/industrialização-1950.jpg" alt="Industrialização">
+                    <div class="library-item-content">
+                        <h3>1950: Industrialização</h3>
+                        <p>A industrialização na década de 1950 transformou cidades como Porto Alegre e Curitiba em centros econômicos, atraindo migrantes de outras regiões do Brasil e impulsionando o crescimento urbano. Dados detalhados podem be encontrados no <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao.html" target="_blank">IBGE</a>.</p>
+                    </div>
+                </div>
+                <div class="library-item">
+                    <img src="/imagens/florianopolis-848x477.webp" alt="Qualidade de Vida">
+                    <div class="library-item-content">
+                        <h3>2020: Qualidade de Vida</h3>
+                        <p>Cidades como Florianópolis se tornaram destinos populares para novos residentes, atraídos pela alta qualidade de vida, segurança e beleza natural da região. Florianópolis frequentemente aparece em rankings de qualidade de vida, como os publicados pelo <a href="https://www.numbeo.com/quality-of-life/rankings.jsp" target="_blank">Numbeo</a>.</p>
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+
+        <section class="content-section culture-section fade-in">
+            <h2>Cultura e Tradições</h2>
+            <p>A cultura da Região Sul é um reflexo da diversidade trazida pelos imigrantes e das tradições locais, que se manifestam em festas, gastronomia e costumes únicos.</p>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="/imagens/editor-65df3665ec8da.jpeg" alt="Oktoberfest Blumenau">
+                    <div class="overlay">
+                        <h3>Influência Europeia</h3>
+                        <p>Festas como a Oktoberfest de Blumenau, no coração de Santa Catarina, celebram a herança alemã com música, danças e cervejas artesanais, atraindo milhões de visitantes todos os anos. A Oktoberfest de Blumenau é uma das maiores do mundo fora da Alemanha, conforme destacado no <a href="https://oktoberfestblumenau.com.br/" target="_blank">site oficial do evento</a>.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <img src="/imagens/churrasco-gaucho.webp" alt="Churrasco Gaúcho">
+                    <div class="overlay">
+                        <h3>Churrasco Gaúcho</h3>
+                        <p>O churrasco gaúcho, preparado em fogo de chão, é uma tradição que remonta aos primeiros colonos do Rio Grande do Sul. É mais do que uma refeição: é um momento de confraternização e hospitalidade. Saiba mais sobre essa tradição no <a href="https://www.gov.br/turismo/pt-br/assuntos/noticias/churrasco-gaucho-uma-tradicao-cultural" target="_blank">Portal do Turismo Brasileiro</a>.</p>
+                    </div>
+                </div>
+                <div class="culture-item">
+                    <img src="/imagens/chimarão.jpeg" alt="Chimarrão">
+                    <div class="overlay">
+                        <h3>Chimarrão</h3>
+                        <p>O chimarrão, uma bebida à base de erva-mate, é um símbolo da cultura sulista. Compartilhado em rodas de amigos, representa a união e a conexão com as raízes da região. A história do chimarrão pode ser explorada no <a href="https://www.mate.com.br/historia-do-chimarrao" target="_blank">site Mate.com.br</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlight-section fade-in">
+            <h3>As Regiões de Maior Desenvolvimento no Sul</h3>
+            <p>Conheça as três regiões que se destacaram pelo elevado desenvolvimento econômico, cultural e social na Região Sul do Brasil.</p>
+            <div class="development-regions">
+                <div class="region-item">
+                    <h4>Curitiba (Paraná)</h4>
+                    <p>Curitiba é reconhecida como uma das cidades mais desenvolvidas do Brasil, com um forte foco em sustentabilidade e planejamento urbano. Sua economia diversificada, com ênfase em tecnologia e serviços, atraiu investimentos e migrantes, consolidando-a como um polo de inovação. Além disso, a cidade é conhecida por sua alta qualidade de vida e eventos culturais, como o Festival de Teatro de Curitiba.</p>
+                </div>
+                <div class="region-item">
+                    <h4>Florianópolis (Santa Catarina)</h4>
+                    <p>Florianópolis se destaca pelo crescimento no setor de tecnologia, sendo chamada de "Vale do Silício Brasileiro". A cidade combina desenvolvimento econômico com alta qualidade de vida, atraindo profissionais e empresas de TI. Sua beleza natural e infraestrutura turística também contribuem para o turismo cultural e sustentável, com eventos como o Ironman Brasil.</p>
+                </div>
+                <div class="region-item">
+                    <h4>Porto Alegre (Rio Grande do Sul)</h4>
+                    <p>Porto Alegre é um centro econômico e cultural do Sul, com uma economia robusta baseada em indústria, comércio e serviços. A cidade é conhecida por sua rica vida cultural, com eventos como a Feira do Livro e o Carnaval. Apesar dos desafios climáticos recentes, Porto Alegre continua a ser um polo de desenvolvimento e inovação na região.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Retractable Button -->
+        <div class="retractable-btn" id="retractable-btn">
+            <i class="fas fa-cog"></i>
+            <div class="retractable-options">
+                <button class="option-btn" onclick="openMap()">Acessar Mapa</button>
+                <button class="option-btn" onclick="toggleDarkMode()">Modo Escuro</button>
+            </div>
+        </div>
+
+        <!-- Mapa Interativo -->
+        <div class="map-container" id="map-container">
+            <div class="map-sidebar">
+                <h3>Evolução Geográfica</h3>
+                <ul class="location-list">
+                    <li class="location-item" data-location="sao-leopoldo">
+                        <div>
+                            <strong>São Leopoldo (RS)</strong>
+                            <p>Primeiro ponto de colonização alemã em 1824, marcando o início da imigração europeia na região.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="caxias-do-sul">
+                        <div>
+                            <strong>Caxias do Sul (RS)</strong>
+                            <p>Fundada por imigrantes italianos em 1875, tornou-se um polo industrial e cultural.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="blumenau">
+                        <div>
+                            <strong>Blumenau (SC)</strong>
+                            <p>Colonizada por alemães em 1850, conhecida pela Oktoberfest e desenvolvimento cultural.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="joinville">
+                        <div>
+                            <strong>Joinville (SC)</strong>
+                            <p>Maior cidade de Santa Catarina, com forte industrialização desde o século XX.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="lages">
+                        <div>
+                            <strong>Lages (SC)</strong>
+                            <p>Importante centro agropecuário, com crescimento no setor madeireiro e turístico.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="pelotas">
+                        <div>
+                            <strong>Pelotas (RS)</strong>
+                            <p>Conhecida pelo desenvolvimento cultural e econômico, com destaque para a produção de doces e a arquitetura histórica.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="curitiba">
+                        <div>
+                            <strong>Curitiba (PR)</strong>
+                            <p>Capital do Paraná, destaque em sustentabilidade e inovação urbana desde o século XX.</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="florianopolis">
+                        <div>
+                            <strong>Florianópolis (SC)</strong>
+                            <p>Centro tecnológico e turístico, conhecido como o "Vale do Silício Brasileiro".</p>
+                        </div>
+                    </li>
+                    <li class="location-item" data-location="porto-alegre">
+                        <div>
+                            <strong>Porto Alegre (RS)</strong>
+                            <p>Capital do Rio Grande do Sul, polo econômico e cultural com forte influência imigrante.</p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="close-map-btn">Fechar Mapa</button>
+            </div>
+            <div id="map"></div>
+        </div>
+
+        <section class="content-section stats-section fade-in">
+            <h2>Estatísticas e Tendências</h2>
+            <p>Entenda os números e as tendências que moldam a dinâmica migratória na Região Sul, desde o crescimento populacional até os impactos das mudanças climáticas.</p>
+            <div class="stats-grid">
+                <div class="stats-item">
+                    <img src="/imagens/taxa-população-Sul.jpg" alt="Crescimento Populacional">
+                    <div class="stats-item-content">
+                        <h3>Crescimento Populacional</h3>
+                        <p>Entre 2010 e 2020, a população da Região Sul cresceu a uma taxa média de 0,8% ao ano, segundo o IBGE. Esse crescimento foi impulsionado pela urbanização e pela atração de novos residentes em busca de qualidade de vida. Esses dados são baseados no Censo Demográfico do IBGE, disponível em <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html" target="_blank">IBGE</a>.</p>
+                        <a href="#">Leia a Notícia</a>
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <img src="/imagens/migração-enchentes.jpg" alt="Migração Atual">
+                    <div class="stats-item-content">
+                        <h3>Migração Atual</h3>
+                        <p>Após as enchentes de 2024, mais de 420.000 pessoas foram deslocadas no Rio Grande do Sul, segundo o The Guardian (14/11/2024). Esse evento destacou os desafios climáticos que afetam a região e influenciam novos padrões migratórios. Veja o artigo completo em <a href="https://www.theguardian.com/world/2024/nov/14/brazil-floods-displace-420000-people-rio-grande-do-sul" target="_blank">The Guardian</a>.</p>
+                        <a href="#">Leia a Notícia</a>
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <img src="/imagens/agro-rio-grande-economia-10-mai-2024-1-scaled.webp" alt="Gráfico de Migração">
+                    <div class="stats-item-content">
+                        <h3>Taxa de Migração</h3>
+                        <p>Em 2024, o saldo migratório líquido foi impactado pelas enchentes, com 95% dos municípios do Rio Grande do Sul afetados, segundo a Mongabay (11/02/2025). Esses números refletem a busca por preservação cultural em meio a desafios ambientais. A fonte original está disponível em <a href="https://www.mongabay.com/2025/02/11/brazil-floods-rio-grande-do-sul-migration-impact" target="_blank">Mongabay</a>.</p>
+                        <a href="#">Leia a Notícia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><b>Desenvolvido por:</b> <span class="developer-name" onclick="playDoom()">Francisco Eduardo</span></p>
+        <p><b>Projeto Migrações:</b> SESI/SENAI</p>
+        <h3>Fontes</h3>
+        <ul>
+            <li><a href="https://www.ibge.gov.br" target="_blank">IBGE</a></li>
+            <li><a href="https://www.theguardian.com" target="_blank">The Guardian</a></li>
+            <li><a href="https://www.gov.br" target="_blank">Portal do Governo Brasileiro</a></li>
+            <li><a href="https://www.mongabay.com" target="_blank">Mongabay</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/regions/sul/script.js"></script>
+</body>
+</html>
